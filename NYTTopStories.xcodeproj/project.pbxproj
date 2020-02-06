@@ -13,6 +13,9 @@
 		0C14EF8423EC6B67009BC63E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C14EF8223EC6B67009BC63E /* LaunchScreen.storyboard */; };
 		0C14EF8F23EC6B68009BC63E /* NYTTopStoriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C14EF8E23EC6B68009BC63E /* NYTTopStoriesTests.swift */; };
 		0C14EF9A23EC6C35009BC63E /* TopStoriesTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C14EF9923EC6C35009BC63E /* TopStoriesTabController.swift */; };
+		0C14EF9E23EC6E52009BC63E /* NewsFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C14EF9D23EC6E52009BC63E /* NewsFeedViewController.swift */; };
+		0C14EFA023EC6E76009BC63E /* SavedArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C14EF9F23EC6E76009BC63E /* SavedArticleViewController.swift */; };
+		0C14EFA223EC6F27009BC63E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C14EFA123EC6F27009BC63E /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,9 @@
 		0C14EF8E23EC6B68009BC63E /* NYTTopStoriesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYTTopStoriesTests.swift; sourceTree = "<group>"; };
 		0C14EF9023EC6B68009BC63E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0C14EF9923EC6C35009BC63E /* TopStoriesTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopStoriesTabController.swift; sourceTree = "<group>"; };
+		0C14EF9D23EC6E52009BC63E /* NewsFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedViewController.swift; sourceTree = "<group>"; };
+		0C14EF9F23EC6E76009BC63E /* SavedArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedArticleViewController.swift; sourceTree = "<group>"; };
+		0C14EFA123EC6F27009BC63E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,9 +83,10 @@
 		0C14EF7623EC6B64009BC63E /* NYTTopStories */ = {
 			isa = PBXGroup;
 			children = (
+				0C14EF9C23EC6E28009BC63E /* Controllers */,
+				0C14EF9B23EC6E12009BC63E /* Supporting Files */,
 				0C14EF7723EC6B64009BC63E /* AppDelegate.swift */,
 				0C14EF7923EC6B64009BC63E /* SceneDelegate.swift */,
-				0C14EF9923EC6C35009BC63E /* TopStoriesTabController.swift */,
 				0C14EF8023EC6B67009BC63E /* Assets.xcassets */,
 				0C14EF8223EC6B67009BC63E /* LaunchScreen.storyboard */,
 				0C14EF8523EC6B67009BC63E /* Info.plist */,
@@ -94,6 +101,24 @@
 				0C14EF9023EC6B68009BC63E /* Info.plist */,
 			);
 			path = NYTTopStoriesTests;
+			sourceTree = "<group>";
+		};
+		0C14EF9B23EC6E12009BC63E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0C14EF9C23EC6E28009BC63E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0C14EF9923EC6C35009BC63E /* TopStoriesTabController.swift */,
+				0C14EF9D23EC6E52009BC63E /* NewsFeedViewController.swift */,
+				0C14EF9F23EC6E76009BC63E /* SavedArticleViewController.swift */,
+				0C14EFA123EC6F27009BC63E /* SettingsViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,8 +222,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C14EF7823EC6B64009BC63E /* AppDelegate.swift in Sources */,
+				0C14EFA023EC6E76009BC63E /* SavedArticleViewController.swift in Sources */,
 				0C14EF9A23EC6C35009BC63E /* TopStoriesTabController.swift in Sources */,
 				0C14EF7A23EC6B64009BC63E /* SceneDelegate.swift in Sources */,
+				0C14EF9E23EC6E52009BC63E /* NewsFeedViewController.swift in Sources */,
+				0C14EFA223EC6F27009BC63E /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
