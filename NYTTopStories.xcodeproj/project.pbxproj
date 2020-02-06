@@ -20,6 +20,7 @@
 		0C14EFA623EC851D009BC63E /* TopStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C14EFA523EC851D009BC63E /* TopStory.swift */; };
 		0C14EFA923EC8621009BC63E /* NYTTopStoriesAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C14EFA823EC8621009BC63E /* NYTTopStoriesAPIClient.swift */; };
 		0C14EFAD23EC866E009BC63E /* ImageKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0C14EFAC23EC866E009BC63E /* ImageKit */; };
+		0C14EFAF23EC8BED009BC63E /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C14EFAE23EC8BED009BC63E /* Config.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		0C14EFA323EC71BB009BC63E /* NewsFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedView.swift; sourceTree = "<group>"; };
 		0C14EFA523EC851D009BC63E /* TopStory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopStory.swift; sourceTree = "<group>"; };
 		0C14EFA823EC8621009BC63E /* NYTTopStoriesAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYTTopStoriesAPIClient.swift; sourceTree = "<group>"; };
+		0C14EFAE23EC8BED009BC63E /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 			children = (
 				0C14EF7623EC6B64009BC63E /* NYTTopStories */,
 				0C14EFAA23EC862E009BC63E /* Network Services */,
+				0C14EF9B23EC6E12009BC63E /* Supporting Files */,
 				0C14EF8D23EC6B68009BC63E /* NYTTopStoriesTests */,
 				0C14EF7523EC6B64009BC63E /* Products */,
 			);
@@ -93,9 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				0C14EFA723EC8604009BC63E /* Models */,
-				0C14EFA523EC851D009BC63E /* TopStory.swift */,
 				0C14EF9C23EC6E28009BC63E /* Controllers */,
-				0C14EF9B23EC6E12009BC63E /* Supporting Files */,
 				0C14EF7723EC6B64009BC63E /* AppDelegate.swift */,
 				0C14EF7923EC6B64009BC63E /* SceneDelegate.swift */,
 				0C14EF8023EC6B67009BC63E /* Assets.xcassets */,
@@ -118,6 +119,7 @@
 		0C14EF9B23EC6E12009BC63E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0C14EFAE23EC8BED009BC63E /* Config.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -136,6 +138,7 @@
 		0C14EFA723EC8604009BC63E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0C14EFA523EC851D009BC63E /* TopStory.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				0C14EFA423EC71BB009BC63E /* NewsFeedView.swift in Sources */,
 				0C14EFA923EC8621009BC63E /* NYTTopStoriesAPIClient.swift in Sources */,
 				0C14EFA623EC851D009BC63E /* TopStory.swift in Sources */,
+				0C14EFAF23EC8BED009BC63E /* Config.swift in Sources */,
 				0C14EF9E23EC6E52009BC63E /* NewsFeedViewController.swift in Sources */,
 				0C14EFA223EC6F27009BC63E /* SettingsViewController.swift in Sources */,
 			);
