@@ -17,6 +17,7 @@
 		0C14EFA023EC6E76009BC63E /* SavedArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C14EF9F23EC6E76009BC63E /* SavedArticleViewController.swift */; };
 		0C14EFA223EC6F27009BC63E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C14EFA123EC6F27009BC63E /* SettingsViewController.swift */; };
 		0C14EFA423EC71BB009BC63E /* NewsFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C14EFA323EC71BB009BC63E /* NewsFeedView.swift */; };
+		0C14EFA623EC851D009BC63E /* TopStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C14EFA523EC851D009BC63E /* TopStory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		0C14EF9F23EC6E76009BC63E /* SavedArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedArticleViewController.swift; sourceTree = "<group>"; };
 		0C14EFA123EC6F27009BC63E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		0C14EFA323EC71BB009BC63E /* NewsFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedView.swift; sourceTree = "<group>"; };
+		0C14EFA523EC851D009BC63E /* TopStory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopStory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 		0C14EF6B23EC6B64009BC63E = {
 			isa = PBXGroup;
 			children = (
+				0C14EFA523EC851D009BC63E /* TopStory.swift */,
 				0C14EF7623EC6B64009BC63E /* NYTTopStories */,
 				0C14EF8D23EC6B68009BC63E /* NYTTopStoriesTests */,
 				0C14EF7523EC6B64009BC63E /* Products */,
@@ -229,6 +232,7 @@
 				0C14EF9A23EC6C35009BC63E /* TopStoriesTabController.swift in Sources */,
 				0C14EF7A23EC6B64009BC63E /* SceneDelegate.swift in Sources */,
 				0C14EFA423EC71BB009BC63E /* NewsFeedView.swift in Sources */,
+				0C14EFA623EC851D009BC63E /* TopStory.swift in Sources */,
 				0C14EF9E23EC6E52009BC63E /* NewsFeedViewController.swift in Sources */,
 				0C14EFA223EC6F27009BC63E /* SettingsViewController.swift in Sources */,
 			);
