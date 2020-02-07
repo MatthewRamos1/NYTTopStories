@@ -18,15 +18,23 @@ class NewsFeedViewController: UIViewController {
         newsFeedView.collectionView.dataSource = self
         newsFeedView.collectionView.delegate = self
         
-        newsFeedView.collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "articleCell")
-        
-
+        newsFeedView.collectionView.register(NewsCell.self, forCellWithReuseIdentifier: "articleCell")
     }
     
     override func loadView() {
         view = newsFeedView
     }
 
+    private func fetchStories(for section: String = "Technology") {
+        NYTTopStoriesAPIClient.fetchTopStories(for: section) { (result) in
+            switch result {
+                case .failure(let appError):
+                print("")
+            case .success(let articles):
+                print("")
+            }
+        }
+    }
 
 }
 
@@ -47,7 +55,7 @@ extension NewsFeedViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let maxSize: CGSize = UIScreen.main.bounds.size
         let itemWidth: CGFloat = maxSize.width
-        let itemHeight: CGFloat = maxSize.height * 30
+        let itemHeight: CGFloat = maxSize.height * 0.30
         return CGSize(width: itemWidth, height: itemHeight)
     }
 }
