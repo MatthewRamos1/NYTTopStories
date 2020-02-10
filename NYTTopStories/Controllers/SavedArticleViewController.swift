@@ -36,7 +36,7 @@ class SavedArticleViewController: UIViewController {
         fetchSavedArticles()
         savedArticleView.collectionView.dataSource = self
         savedArticleView.collectionView.delegate = self
-        savedArticleView.collectionView.register(SavedArticleCell.self, forCellWithReuseIdentifier: "savedArticle")
+        savedArticleView.collectionView.register(SavedArticleCell.self, forCellWithReuseIdentifier: "savedArticleCell")
 
     }
     
@@ -62,6 +62,7 @@ extension SavedArticleViewController: UICollectionViewDataSource {
         let savedArticle = savedArticles[indexPath.row]
         cell.backgroundColor = .white
         cell.configureCell(for: savedArticle)
+        cell.delegate = self
         return cell
     }
     
@@ -93,5 +94,30 @@ extension SavedArticleViewController: DataPersistenceDelegate {
     
     func didDeleteItem<T>(_ persistenceHelper: DataPersistence<T>, item: T) where T : Decodable, T : Encodable, T : Equatable {
         print("item was deleted")
+    }
+}
+
+extension SavedArticleViewController: SavedArticleCellDelegate {
+    func didSelectMoreButton(_ savedArticleCell: SavedArticleCell, article: Article) {
+         print("didSelect")
+        
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { alertAction in
+        }
+        alertController.addAction(cancelAction)
+        alertController.addAction(deleteAction)
+        present(alertController, animated: true)
+    }
+    
+    private func deleteArticle(_ article: Article) {
+        guard let index = savedArticles.firstIndex(of: article) else {
+            return
+        }
+        do {
+            try dataPersistence.deleteItem(at: index)
+        } catch {
+            print("error deleting article")
+        }
     }
 }

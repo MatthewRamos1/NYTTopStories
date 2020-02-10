@@ -17,6 +17,7 @@ class TopStoriesTabController: UITabBarController {
     private lazy var newsFeedVC: NewsFeedViewController = {
         let viewController = NewsFeedViewController()
         viewController.tabBarItem = UITabBarItem(title: "News Feed", image: UIImage(systemName: "eyeglasses"), tag: 0)
+        viewController.dataPersistence = dataPersistence
         return viewController
     }()
     

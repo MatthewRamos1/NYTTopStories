@@ -8,12 +8,19 @@
 
 import UIKit
 
+protocol SavedArticleCellDelegate: AnyObject {
+    func didSelectMoreButton(_ savedArticleCell: SavedArticleCell, article: Article)
+}
+
 class SavedArticleCell: UICollectionViewCell {
+    
+    weak var delegate: SavedArticleCellDelegate?
     
     private var currentArticle: Article!
     
     public lazy var moreButton: UIButton = {
         let button = UIButton()
+        button.addTarget(self, action: #selector(moreButtonWasPressed(_:)), for: .touchUpInside)
         button.setImage(UIImage(systemName: "ellipsis.circle"), for: .normal)
         return button
     }()
@@ -42,7 +49,7 @@ class SavedArticleCell: UICollectionViewCell {
     
     @objc
     private func moreButtonWasPressed(_ sender: UIButton) {
-        print("button was pressed")
+        delegate?.didSelectMoreButton(self, article: currentArticle)
     }
     
     private func setupMoreButtonConstraints() {
@@ -68,6 +75,7 @@ class SavedArticleCell: UICollectionViewCell {
     }
     
     public func configureCell(for savedArticle: Article) {
+        currentArticle = savedArticle
         articleTitle.text = savedArticle.title
         
     }
