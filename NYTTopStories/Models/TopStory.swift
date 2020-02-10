@@ -8,7 +8,15 @@
 
 import Foundation
 
-struct TopStories: Codable {
+enum ImageFormat: String {
+    case superJumbo = "superJumbo"
+    case thumbLarge = "thumbLarge"
+    case standard = "Standard Thumbnail"
+    case normal = "Normal"
+    
+}
+
+struct TopStories: Codable & Equatable {
     let section: String
     let lastUpdated: String
     let results: [Article]
@@ -19,7 +27,7 @@ struct TopStories: Codable {
     }
 }
 
-struct Article: Codable {
+struct Article: Codable & Equatable {
     let section: String
     let title: String
     let abstract: String
@@ -34,10 +42,20 @@ struct Article: Codable {
     }
 }
 
-struct Multimedia: Codable {
+struct Multimedia: Codable & Equatable{
     let url: String
     let format: String
     let height: Double
     let width: Double
     let caption: String
+}
+
+extension Article {
+    func getArticleImageURL(for imageFormat: ImageFormat) -> String {
+        let results = multimedia.filter { $0.format == imageFormat.rawValue}
+        guard let format = results.first else {
+            return ""
+        }
+        return format.url
+    }
 }

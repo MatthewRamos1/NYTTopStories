@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ImageKit
 
 class NewsCell: UICollectionViewCell {
     
@@ -85,6 +86,24 @@ class NewsCell: UICollectionViewCell {
             abstractHeadline.topAnchor.constraint(equalTo: articleTitle.bottomAnchor, constant: 8)
         
         ])
+    }
+    
+    public func configureCell(with article: Article) {
+        articleTitle.text = article.title
+        abstractHeadline.text = article.abstract
+        
+        newImageView.getImage(with: article.getArticleImageURL(for: .thumbLarge)) { [weak self ](result) in
+            switch result {
+            case .failure:
+                DispatchQueue.main.async {
+                    self?.newImageView.image = UIImage(systemName: "exclamationmark-octagon")
+                }
+            case .success(let image):
+                DispatchQueue.main.async {
+                    self?.newImageView.image = image
+                }
+            }
+        }
     }
 
 }

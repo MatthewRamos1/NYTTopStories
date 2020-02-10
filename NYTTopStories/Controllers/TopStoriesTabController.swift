@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import DataPersistence
 
 class TopStoriesTabController: UITabBarController {
+    
+    //1
+    private var dataPersistence = DataPersistence<Article>(filename: "savedArticles.plist")
     
     private lazy var newsFeedVC: NewsFeedViewController = {
         let viewController = NewsFeedViewController()
@@ -19,6 +23,8 @@ class TopStoriesTabController: UITabBarController {
     private lazy var savedArticlesVC: SavedArticleViewController = {
         let viewController = SavedArticleViewController()
         viewController.tabBarItem = UITabBarItem(title: "Saved Articles", image: UIImage(systemName: "folder"), tag: 1)
+        viewController.dataPersistence = dataPersistence
+        viewController.dataPersistence.delegate = viewController
         return viewController
     }()
     
@@ -32,7 +38,7 @@ class TopStoriesTabController: UITabBarController {
         super.viewDidLoad()
         view.backgroundColor = .systemYellow
         
-        viewControllers = [newsFeedVC, savedArticlesVC, settingsVC]
+        viewControllers = [UINavigationController(rootViewController: newsFeedVC), savedArticlesVC, settingsVC]
 
     }
 
