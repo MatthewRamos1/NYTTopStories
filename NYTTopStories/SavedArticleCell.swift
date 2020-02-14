@@ -18,6 +18,12 @@ class SavedArticleCell: UICollectionViewCell {
     
     private var currentArticle: Article!
     
+    private lazy var longPressGesture: UILongPressGestureRecognizer = {
+        let gesture = UILongPressGestureRecognizer()
+        gesture.addTarget(self, action: #selector(didLongPress(_:)))
+        return gesture
+    }()
+    
     public lazy var moreButton: UIButton = {
         let button = UIButton()
         button.addTarget(self, action: #selector(moreButtonWasPressed(_:)), for: .touchUpInside)
@@ -32,6 +38,17 @@ class SavedArticleCell: UICollectionViewCell {
         return label
     }()
     
+    public lazy var newImageView: UIImageView = {
+        let iv = UIImageView()
+        iv.contentMode = .scaleAspectFill
+        iv.image = UIImage(systemName: "photo")
+        iv.alpha = 0
+        iv.clipsToBounds = true
+        return iv
+    }()
+    
+    private var isShowingImage = false
+    
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
         commonInit()
@@ -45,6 +62,46 @@ class SavedArticleCell: UICollectionViewCell {
     private func commonInit() {
         setupMoreButtonConstraints()
         setupArticleTitleConstraints()
+        setupImageViewConstraints()
+        addGestureRecognizer(longPressGesture)
+    }
+    
+    @objc
+    private func didLongPress(_ gesture: UILongPressGestureRecognizer) {
+        guard let currentArticle = currentArticle else { return }
+        if gesture.state == .began || gesture.state == .changed {
+            print("long pressed")
+            return
+        }
+        
+        isShowingImage.toggle()
+        
+        newImageView.getImage(with: currentArticle.getArticleImageURL(for: .normal)) { [weak self] (result) in
+            switch result {
+            case .failure:
+                break
+            case .success(let image):
+                DispatchQueue.main.async {
+                    self?.newImageView.image = image
+                    self?.animate()
+                }
+            }
+        }
+        }
+    
+    private func animate() {
+        let duration: Double = 1.0
+        if isShowingImage {
+            
+        
+        UIView.transition(with: self, duration: duration, options: [], animations: {
+            self.newImageView.alpha = 1.0
+            self.articleTitle.alpha = 0.0
+        }, completion: nil)
+        } else {
+            self.newImageView.alpha = 0.0
+            self.articleTitle.alpha = 1.0
+        }
     }
     
     @objc
@@ -71,6 +128,18 @@ class SavedArticleCell: UICollectionViewCell {
             articleTitle.trailingAnchor.constraint(equalTo: trailingAnchor),
             articleTitle.topAnchor.constraint(equalTo: moreButton.bottomAnchor),
             articleTitle.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
+    }
+    
+    private func setupImageViewConstraints() {
+        addSubview(newImageView)
+        newImageView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            newImageView.topAnchor.constraint(equalTo: moreButton.bottomAnchor),
+            newImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            newImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            newImageView.bottomAnchor.constraint(equalTo: bottomAnchor)
+        
         ])
     }
     

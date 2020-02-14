@@ -24,9 +24,12 @@
 		0C14EFC123EDB719009BC63E /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C14EFC023EDB719009BC63E /* NewsCell.swift */; };
 		0C14EFC923EDCB6A009BC63E /* ArticleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C14EFC823EDCB6A009BC63E /* ArticleDetailViewController.swift */; };
 		0C14EFCB23EDD13B009BC63E /* ArticleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C14EFCA23EDD13B009BC63E /* ArticleDetailView.swift */; };
+		0C4E0B1B23F6F13200EA0E90 /* ZoomImage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C4E0B1A23F6F13200EA0E90 /* ZoomImage.storyboard */; };
+		0C4E0B1D23F6F15400EA0E90 /* ZoomImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4E0B1C23F6F15400EA0E90 /* ZoomImageViewController.swift */; };
 		0C50087623F1AC3500E29AC6 /* SavedArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C50087523F1AC3500E29AC6 /* SavedArticleView.swift */; };
 		0C50087823F1B32C00E29AC6 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C50087723F1B32C00E29AC6 /* EmptyView.swift */; };
 		0C50087B23F1BB6100E29AC6 /* SavedArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C50087A23F1BB6100E29AC6 /* SavedArticleCell.swift */; };
+		0CE1F23523F1CDDA006870A3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE1F23423F1CDDA006870A3 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,9 +63,12 @@
 		0C14EFC023EDB719009BC63E /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
 		0C14EFC823EDCB6A009BC63E /* ArticleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailViewController.swift; sourceTree = "<group>"; };
 		0C14EFCA23EDD13B009BC63E /* ArticleDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailView.swift; sourceTree = "<group>"; };
+		0C4E0B1A23F6F13200EA0E90 /* ZoomImage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ZoomImage.storyboard; sourceTree = "<group>"; };
+		0C4E0B1C23F6F15400EA0E90 /* ZoomImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomImageViewController.swift; sourceTree = "<group>"; };
 		0C50087523F1AC3500E29AC6 /* SavedArticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedArticleView.swift; sourceTree = "<group>"; };
 		0C50087723F1B32C00E29AC6 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		0C50087A23F1BB6100E29AC6 /* SavedArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedArticleCell.swift; sourceTree = "<group>"; };
+		0CE1F23423F1CDDA006870A3 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				0C14EFAE23EC8BED009BC63E /* Config.swift */,
+				0C4E0B1A23F6F13200EA0E90 /* ZoomImage.storyboard */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -150,6 +157,7 @@
 				0C14EF9F23EC6E76009BC63E /* SavedArticleViewController.swift */,
 				0C14EFA123EC6F27009BC63E /* SettingsViewController.swift */,
 				0C14EFC823EDCB6A009BC63E /* ArticleDetailViewController.swift */,
+				0C4E0B1C23F6F15400EA0E90 /* ZoomImageViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -173,6 +181,7 @@
 		0C50087923F1B33300E29AC6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0CE1F23423F1CDDA006870A3 /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -264,6 +273,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C4E0B1B23F6F13200EA0E90 /* ZoomImage.storyboard in Resources */,
 				0C14EF8423EC6B67009BC63E /* LaunchScreen.storyboard in Resources */,
 				0C14EF8123EC6B67009BC63E /* Assets.xcassets in Resources */,
 			);
@@ -288,7 +298,9 @@
 				0C14EFCB23EDD13B009BC63E /* ArticleDetailView.swift in Sources */,
 				0C14EFA023EC6E76009BC63E /* SavedArticleViewController.swift in Sources */,
 				0C14EFC923EDCB6A009BC63E /* ArticleDetailViewController.swift in Sources */,
+				0CE1F23523F1CDDA006870A3 /* SettingsView.swift in Sources */,
 				0C14EF9A23EC6C35009BC63E /* TopStoriesTabController.swift in Sources */,
+				0C4E0B1D23F6F15400EA0E90 /* ZoomImageViewController.swift in Sources */,
 				0C50087623F1AC3500E29AC6 /* SavedArticleView.swift in Sources */,
 				0C14EF7A23EC6B64009BC63E /* SceneDelegate.swift in Sources */,
 				0C50087B23F1BB6100E29AC6 /* SavedArticleCell.swift in Sources */,

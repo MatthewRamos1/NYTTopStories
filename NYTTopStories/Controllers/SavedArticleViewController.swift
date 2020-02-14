@@ -12,7 +12,7 @@ import DataPersistence
 class SavedArticleViewController: UIViewController {
     
     //4
-    public var dataPersistence: DataPersistence<Article>!
+    private var dataPersistence: DataPersistence<Article>
     private let savedArticleView = SavedArticleView()
     
     private var savedArticles = [Article]() {
@@ -24,6 +24,15 @@ class SavedArticleViewController: UIViewController {
                 savedArticleView.collectionView.backgroundView = nil
             }
         }
+    }
+    
+    init(_ dataPersistence: DataPersistence<Article>) {
+        self.dataPersistence = dataPersistence
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func loadView() {
@@ -84,16 +93,22 @@ extension SavedArticleViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let article = savedArticles[indexPath.row]
+        let detailVC = ArticleDetailViewController(dataPersistence, article: article)
+        self.navigationController?.pushViewController(detailVC, animated: true)
+    }
 }
 
 //5
 extension SavedArticleViewController: DataPersistenceDelegate {
     func didSaveItem<T>(_ persistenceHelper: DataPersistence<T>, item: T) where T : Decodable, T : Encodable, T : Equatable {
-        print("Item was saved")
+        fetchSavedArticles()
     }
     
     func didDeleteItem<T>(_ persistenceHelper: DataPersistence<T>, item: T) where T : Decodable, T : Encodable, T : Equatable {
-        print("item was deleted")
+        fetchSavedArticles()
     }
 }
 
@@ -104,6 +119,7 @@ extension SavedArticleViewController: SavedArticleCellDelegate {
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
         let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { alertAction in
+            self.deleteArticle(article)
         }
         alertController.addAction(cancelAction)
         alertController.addAction(deleteAction)

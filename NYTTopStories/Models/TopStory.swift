@@ -32,7 +32,7 @@ struct Article: Codable & Equatable {
     let title: String
     let abstract: String
     let publishedDate: String
-    let multimedia: [Multimedia]
+    let multimedia: [Multimedia]?
     private enum CodingKeys: String, CodingKey {
         case section
         case title
@@ -52,6 +52,9 @@ struct Multimedia: Codable & Equatable{
 
 extension Article {
     func getArticleImageURL(for imageFormat: ImageFormat) -> String {
+        guard let multimedia = multimedia else {
+            return ""
+        }
         let results = multimedia.filter { $0.format == imageFormat.rawValue}
         guard let format = results.first else {
             return ""

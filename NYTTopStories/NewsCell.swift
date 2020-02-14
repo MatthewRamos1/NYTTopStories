@@ -27,6 +27,7 @@ class NewsCell: UICollectionViewCell {
         label.numberOfLines = 2
         label.font = UIFont.preferredFont(forTextStyle: .headline)
         label.text = "Article Title"
+        label.textAlignment = .center
         return label
     }()
     
